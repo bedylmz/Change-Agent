@@ -13,10 +13,11 @@
 
 Official PyTorch implementation of the paper: "**Change-Agent: Toward Interactive Comprehensive Remote Sensing Change Interpretation and Analysis**" in [[IEEE](https://ieeexplore.ieee.org/document/10591792)]  ***(Accepted by IEEE TGRS 2024)***
 
-## News
+## 🥳News
 
 - 2024-06: The code is **available**.
 - 2024-03: The paper is **available**.
+- 🔥 Our survey "**Remote Sensing Temporal Vision-Language Models: A Comprehensive Survey": [Arxiv](https://arxiv.org/abs/2412.02573) || [Github](https://github.com/Chen-Yang-Liu/Awesome-RS-Temporal-VLM)** 🔥 
 
 ## Table of Contents
 - [LEVIR-MCI dataset](#LEVIR-MCI-dataset)
