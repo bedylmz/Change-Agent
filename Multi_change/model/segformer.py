@@ -1,6 +1,6 @@
 import os
 
-from mmseg.utils import get_root_logger
+from mmengine.logging import MMLogger
 from mmcv.runner import load_checkpoint
 from functools import partial
 from timm.models.layers import DropPath, to_2tuple, trunc_normal_
@@ -266,7 +266,7 @@ class MixVisionTransformer(nn.Module):
 
     def init_weights(self, pretrained=None):
         if isinstance(pretrained, str):
-            logger = get_root_logger()
+            logger = MMLogger.get_instance('mmseg', log_file='train.log', log_level='INFO')
             load_checkpoint(self, pretrained, map_location='cpu', strict=False, logger=logger)
 
     def reset_drop_path(self, drop_path_rate):

@@ -16,11 +16,11 @@ SPECIAL_TOKENS = {
   '<START>': 2,
   '<END>': 3,
 }
-DATA_PATH_ROOT = 'xxxx'
+DATA_PATH_ROOT = ''
 def main(args):
     if args.dataset == 'LEVIR_MCI':
-        input_captions_json = f'{DATA_PATH_ROOT}\Levir-MCI-dataset\LevirCCcaptions.json'
-        input_image_dir = f'{DATA_PATH_ROOT}\Levir-MCI-dataset\images'
+        input_captions_json = 'LEVIR-MCI-dataset/LevirCCcaptions.json'
+        input_image_dir = 'LEVIR-MCI-dataset/images'
         input_vocab_json = ''
         output_vocab_json = 'vocab.json'
         save_dir = './data/LEVIR_MCI/'
@@ -38,7 +38,7 @@ def main(args):
         max_length = -1
         all_cap_tokens = []
         for img in data['images']:
-            captions = []    
+            captions = []
             for c in img['sentences']:
                 # Update word frequency
                 assert len(c['raw']) > 0, 'error: some image has no caption'
@@ -68,11 +68,11 @@ def main(args):
         #Considering each image pair has 5 annotations, two strategies can be adopted to generate list for training:
         # a: creating training list with a self-defined token_id[0:4], each token list corresponds to specific captions;
         # or b: randomly select one of the five captions during training;
-          
+
             if i.split('_')[0] == 'train':
-               f = open(os.path.join(save_dir + 'train' + '.txt'), 'a')
-               f.write(img + '\n')
-               f.close
+              f = open(os.path.join(save_dir + 'train' + '.txt'), 'a')
+              f.write(img + '\n')
+              f.close
 
             # if i.split('_')[0] == 'train':
             #     f = open(os.path.join(save_dir + 'train' + '.txt'), 'a')
@@ -103,13 +103,9 @@ def main(args):
             json.dump(word_freq, f)
 
 
-def tokenize(s, delim=' ',add_start_token=True, 
+def tokenize(s, delim=' ',add_start_token=True,
     add_end_token=True, punct_to_keep=None, punct_to_remove=None):
-    """
-    Tokenize a sequence, converting a string s into a list of (string) tokens by
-    splitting on the specified delimiter. Optionally keep or remove certain
-    punctuation marks and add start and end tokens.
-    """
+
     if punct_to_keep is not None:
         for p in punct_to_keep:
             s = s.replace(p, '%s%s' % (delim, p))
@@ -164,5 +160,5 @@ def encode(seq_tokens, token_to_idx, allow_unk=False):
     return seq_idx
 
 if __name__ == '__main__':
-    args = parser.parse_args()
-    main(args)
+  args = parser.parse_args()
+  main(args)
