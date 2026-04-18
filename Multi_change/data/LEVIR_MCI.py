@@ -45,7 +45,7 @@ class LEVIRCCDataset(Dataset):
         if split =='train':
             for name in self.img_ids:
                 img_fileA = os.path.join(data_folder + '/' + split +'/A/' + name.split('-')[0])
-                img_fileB = img_fileA.replace('A', 'B')
+                img_fileB = os.path.join(data_folder + '/' + split +'/B/' + name.split('-')[0])
 
                 imgA = imread(img_fileA)
                 imgB = imread(img_fileB)
