@@ -70,7 +70,7 @@ class LEVIRCCDataset(Dataset):
         elif split =='val':
             for name in self.img_ids:
                 img_fileA = os.path.join(data_folder + '/' + split +'/A/' + name)
-                img_fileB = img_fileA.replace('A', 'B')
+                img_fileB = os.path.join(data_folder + '/' + split +'/B/' + name)
 
                 imgA = imread(img_fileA)
                 imgB = imread(img_fileB)
@@ -92,7 +92,7 @@ class LEVIRCCDataset(Dataset):
         elif split =='test':
             for name in self.img_ids:
                 img_fileA = os.path.join(data_folder + '/' + split +'/A/' + name)
-                img_fileB = img_fileA.replace('A', 'B')
+                img_fileB = os.path.join(data_folder + '/' + split +'/B/' + name)
 
                 imgA = imread(img_fileA)
                 imgB = imread(img_fileB)
