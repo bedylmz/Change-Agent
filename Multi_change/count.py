@@ -170,7 +170,7 @@ if __name__ == '__main__':
 
     # Data parameters
     parser.add_argument('--sys', default='win', help='system win or linux')
-    parser.add_argument('--data_folder', default='D:\Dataset\Caption\change_caption\Levir-MCI-dataset\images',help='folder with data files')
+    parser.add_argument('--data_folder', default='/content/Change-Agent/Multi_change/LEVIR-MCI-dataset/images',help='folder with data files')
     parser.add_argument('--list_path', default='./data/LEVIR_MCI/', help='path of the data lists')
     parser.add_argument('--token_folder', default='./data/LEVIR_MCI/tokens/', help='folder with token files')
     parser.add_argument('--vocab_file', default='vocab', help='path of the data lists')
