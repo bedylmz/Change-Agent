@@ -49,7 +49,8 @@ class LEVIRCCDataset(Dataset):
 
                 imgA = imread(img_fileA)
                 imgB = imread(img_fileB)
-                seg_label = imread(img_fileA.replace('A', 'label'))
+                seg_label = imread(os.path.join(data_folder + '/' + split +'/label/' + name.split('-')[0])
+)
 
                 if '-' in name:
                     token_id = name.split('-')[-1]
@@ -74,7 +75,7 @@ class LEVIRCCDataset(Dataset):
 
                 imgA = imread(img_fileA)
                 imgB = imread(img_fileB)
-                seg_label = imread(img_fileA.replace('A', 'label'))
+                seg_label = imread(os.path.join(data_folder + '/' + split +'/label/' + name))
 
                 token_id = None
                 if token_folder is not None:
